@@ -260,12 +260,15 @@ async function initForumsList() {
                 : 'Няма съобщения още.';
             return `
           <button type="button" class="thread-card" data-id="${esc(t.id)}">
-            <h3>${esc(t.title)}</h3>
-            <p class="excerpt">${esc(excerpt)}</p>
-            <div class="meta">
-              <span>${esc(formatBgDate(t.createdAt))}</span>
-              <span>${t.messageCount} съобщени${t.messageCount === 1 ? 'е' : 'я'}</span>
+            <div class="thread-card-body">
+              <h3>${esc(t.title)}</h3>
+              <p class="excerpt">${esc(excerpt)}</p>
+              <div class="meta">
+                <span>${esc(formatBgDate(t.createdAt))}</span>
+                <span>${t.messageCount} съобщени${t.messageCount === 1 ? 'е' : 'я'}</span>
+              </div>
             </div>
+            <span class="thread-card-arrow">›</span>
           </button>`;
           })
           .join('');
@@ -297,12 +300,15 @@ async function initForumsList() {
             : 'Няма съобщения още.';
           return `
           <button type="button" class="thread-card" data-id="${esc(t.id)}">
-            <h3>${esc(t.title)}</h3>
-            <p class="excerpt">${esc(excerpt)}</p>
-            <div class="meta">
-              <span>${esc(formatBgDate(t.createdAt))}</span>
-              <span>${count} съобщени${count === 1 ? 'е' : 'я'}</span>
+            <div class="thread-card-body">
+              <h3>${esc(t.title)}</h3>
+              <p class="excerpt">${esc(excerpt)}</p>
+              <div class="meta">
+                <span>${esc(formatBgDate(t.createdAt))}</span>
+                <span>${count} съобщени${count === 1 ? 'е' : 'я'}</span>
+              </div>
             </div>
+            <span class="thread-card-arrow">›</span>
           </button>`;
         })
         .join('');
