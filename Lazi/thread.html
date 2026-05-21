@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>МестаБГ — Разговор</title>
+  <link rel="stylesheet" href="forums.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="thread-page">
+
+<nav class="main-nav">
+  <div class="nav-content">
+    <a href="../Miroslav/index.html" class="logo">Места<span>БГ</span></a>
+    <div class="menu">
+      <a href="forums.html" class="nav-btn nav-btn--ghost">Форуми</a>
+      <a href="../Miroslav/index.html" class="nav-btn nav-btn--ghost">Начало</a>
+      <button type="button" id="logoutBtn" class="logout-link">Изход</button>
+    </div>
+  </div>
+</nav>
+
+<main class="page-wrap" id="threadRoot">
+  <a href="forums.html" class="thread-back">← Към всички теми</a>
+
+  <div id="threadMissing" class="thread-error" hidden>
+    <p>Тази тема не съществува или е премахната.</p>
+    <p style="margin-top:1rem;"><a href="forums.html" class="thread-back">Към форумите</a></p>
+  </div>
+
+  <div id="threadLive" hidden>
+    <header class="thread-header">
+      <h1 id="threadTitleH"></h1>
+      <p class="sub" id="threadMeta"></p>
+    </header>
+
+    <div class="chat-shell">
+      <div id="chatLog" class="chat-log" aria-label="Разговор"></div>
+      <div class="composer">
+        <textarea id="replyBody" maxlength="8000" placeholder="Напиши отговор…" aria-label="Отговор"></textarea>
+        <div class="composer-row">
+          <span class="composer-hint" id="replyHint"></span>
+          <button type="button" class="btn-primary" id="sendReplyBtn">Изпрати</button>
+        </div>
+        <div class="msg" id="replyMessage" hidden></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="../Denis/auth.js"></script>
+<script src="forums.js"></script>
+</body>
+</html>

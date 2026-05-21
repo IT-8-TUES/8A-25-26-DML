@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>МестаБГ — Форуми</title>
+  <link rel="stylesheet" href="forums.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<nav class="main-nav">
+  <div class="nav-content">
+    <a href="../Miroslav/index.html" class="logo">Места<span>БГ</span></a>
+    <div class="menu">
+      <a href="../Miroslav/index.html" class="nav-btn nav-btn--ghost">Начало</a>
+      <span class="nav-btn nav-btn--ghost nav-btn--current" aria-current="page">Форуми</span>
+      <button type="button" id="logoutBtn" class="logout-link">Изход</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Форуми</h1>
+    <p class="hero-sub">Питай общността, споделяй съвети и води разговори по теми за места и пътувания в България.</p>
+  </div>
+</section>
+
+<main class="page-wrap" id="threadsRoot">
+  <div class="section-head">
+    <h2>Всички теми</h2>
+  </div>
+
+  <section class="new-thread" aria-labelledby="newThreadTitle">
+    <h3 id="newThreadTitle">Задай нов въпрос</h3>
+    <form id="newThreadForm" novalidate>
+      <div class="field">
+        <label for="threadTitle">Заглавие</label>
+        <input type="text" id="threadTitle" maxlength="200" placeholder="Напр. Най-добро време за Родопите?" required>
+      </div>
+      <div class="field">
+        <label for="threadFirstMsg">Първо съобщение (по желание)</label>
+        <textarea id="threadFirstMsg" maxlength="8000" placeholder="Опиши въпроса си по-подробно…"></textarea>
+      </div>
+      <button type="submit" class="btn-primary" id="createThreadBtn">Публикувай темата</button>
+      <div class="msg" id="listMessage" hidden></div>
+    </form>
+  </section>
+
+  <div id="threadList" class="thread-list" aria-live="polite"></div>
+</main>
+
+<script src="../Denis/auth.js"></script>
+<script src="forums.js"></script>
+</body>
+</html>
