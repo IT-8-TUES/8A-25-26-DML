@@ -4,21 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Добави място — МестаБГ</title>
-  <link rel="stylesheet" href="../Denis/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="main-style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body class="auth-wrap">
+<body>
 
-<div class="auth-body">
-  <div class="card wide">
-    <a href="index.html" class="back-link">← Назад към фийда</a>
+<nav class="main-nav">
+  <div class="nav-content">
+    <div class="logo">МестаБГ</div>
+    <div class="menu">
+      <button id="logoutBtn" class="logout-link">Изход</button>
+    </div>
+  </div>
+</nav>
+
+<div class="add-wrap">
+  <a href="index.html" class="back-link">← Назад към фийда</a>
+
+  <div class="form-card">
     <h1>Ново място</h1>
-    <p class="auth-sub">Разкажи ни за интересна дестинация или събитие.</p>
+    <p class="form-sub">Разкажи ни за интересна дестинация или събитие.</p>
 
     <form id="placeForm">
       <div class="field">
-        <label>Име на мястото</label>
+        <label>Ime на мястото</label>
         <input type="text" id="pTitle" placeholder="напр. Седемте рилски езера" required>
       </div>
       <div class="field">
@@ -31,12 +41,19 @@
         </select>
       </div>
       <div class="field">
-        <label>Снимка (URL адрес)</label>
+        <label>Снимка <span class="optional">(незадължително)</span></label>
         <input type="url" id="pImg" placeholder="https://image-link.com/img.jpg">
       </div>
       <div class="field">
         <label>Описание</label>
         <textarea id="pDesc" rows="4" placeholder="Сподели впечатления..." required></textarea>
+      </div>
+      <div class="field">
+        <label>Локация <span class="optional">(незадължително — кликни на картата)</span></label>
+        <div id="pickMap" class="map-picker"></div>
+        <p class="map-hint" id="mapHint">Кликни върху картата, за да маркираш местоположението.</p>
+        <input type="hidden" id="pLat">
+        <input type="hidden" id="pLng">
       </div>
       <button type="submit" id="saveBtn">Публикувай</button>
       <div id="statusMsg" class="msg"></div>
@@ -44,6 +61,7 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="../Denis/auth.js"></script>
 <script src="app.js"></script>
 </body>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>МестаБГ — Начало</title>
-  <link rel="stylesheet" href="../Denis/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="main-style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -12,25 +12,39 @@
 
 <nav class="main-nav">
   <div class="nav-content">
-    <div class="logo">Места<span>БГ</span></div>
+    <div class="logo">МестаБГ</div>
     <div class="menu">
-      <a href="add-place.html" class="nav-btn">Добави място</a>
+      <a href="add-place.html" class="nav-btn">+ Добави място</a>
       <button id="logoutBtn" class="logout-link">Изход</button>
     </div>
   </div>
 </nav>
 
-<main class="feed-container">
-  <header class="feed-header">
+<section class="hero">
+  <div class="hero-inner">
     <h1>Открий България</h1>
-    <p>Най-новите места, споделени от нашата общност.</p>
-  </header>
+    <p class="hero-sub">Местни места и дестинации, споделени от нашата общност.</p>
+  </div>
+</section>
 
+<main class="feed-container">
+  <span class="section-label">Последно добавени</span>
   <div id="placesGrid" class="places-grid">
-    <div class="loader">Зареждане на преживявания...</div>
+    <p class="loader">Зареждане...</p>
   </div>
 </main>
 
+<!-- Place detail modal -->
+<div id="placeModal" class="modal-overlay">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose">×</button>
+    <img id="modalImg" class="modal-img" src="" alt="">
+    <div class="modal-body" id="modalBody"></div>
+    <div id="modalMap" class="modal-map"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="../Denis/auth.js"></script>
 <script src="app.js"></script>
 </body>
