@@ -132,10 +132,11 @@ a.nav-btn { display: inline-block; }
 .new-thread {
   background: var(--white);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--blue);
   border-radius: var(--radius);
-  padding: 1.25rem 1.35rem;
+  padding: 1.35rem 1.5rem;
   margin-bottom: 1.75rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 12px rgba(37,99,235,0.07);
 }
 
 .new-thread h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 1rem; color: var(--text); }
@@ -169,20 +170,26 @@ a.nav-btn { display: inline-block; }
 }
 
 .btn-primary {
-  background: var(--blue);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: #fff;
   border: none;
-  padding: 0.65rem 1.25rem;
-  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 0.9rem;
   font-family: inherit;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.28);
-  transition: background 0.15s;
+  box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
+  letter-spacing: 0.01em;
 }
-.btn-primary:hover { background: var(--blue-dark); }
-.btn-primary:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+}
+.btn-primary:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(37,99,235,0.3); }
+.btn-primary:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
 
 .msg {
   margin-top: 0.75rem;
@@ -206,12 +213,13 @@ a.nav-btn { display: inline-block; }
   width: 100%;
   font-family: inherit;
   color: inherit;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-left-color 0.18s;
   box-shadow: var(--shadow-sm);
 }
 .thread-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 28px rgba(37,99,235,0.13);
+  border-left-color: #1d4ed8;
 }
 
 .thread-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
@@ -220,11 +228,12 @@ a.nav-btn { display: inline-block; }
 
 .empty-state {
   text-align: center;
-  padding: 2.5rem 1rem;
+  padding: 3rem 1rem;
   color: var(--muted);
   background: var(--white);
-  border: 1px dashed var(--border);
+  border: 2px dashed var(--border);
   border-radius: var(--radius);
+  font-size: 0.95rem;
 }
 
 /* ── Thread (conversation) page ── */
