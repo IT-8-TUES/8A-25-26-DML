@@ -51,48 +51,61 @@ a { color: inherit; text-decoration: none; }
 .menu { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; justify-content: flex-end; }
 
 .nav-btn {
-  background: #fff;
-  color: var(--blue);
-  padding: 0.45rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.1rem;
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.15s;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  transition: background 0.15s, transform 0.12s;
+  letter-spacing: 0.01em;
 }
-a.nav-btn { display: inline-block; }
-.nav-btn:hover, a.nav-btn:hover { background: #f0f6ff; }
+a.nav-btn { display: inline-flex; }
+.nav-btn:hover, a.nav-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+}
 
 .nav-btn--ghost {
   background: transparent;
-  border: 1.5px solid rgba(255,255,255,0.55);
+  border: 1.5px solid rgba(255,255,255,0.4);
   color: #fff;
 }
-.nav-btn--ghost:hover { background: rgba(255,255,255,0.12); }
+.nav-btn--ghost:hover { background: rgba(255,255,255,0.15); }
 
 .nav-btn--current {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.25);
   color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.65);
+  border: 1.5px solid rgba(255,255,255,0.6);
+  font-weight: 700;
   cursor: default;
   pointer-events: none;
 }
 
 .logout-link {
   background: transparent;
-  border: 1.5px solid rgba(255,255,255,0.5);
-  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.85);
   cursor: pointer;
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: 500;
-  padding: 0.4rem 0.85rem;
+  padding: 0.45rem 1rem;
   border-radius: 8px;
   transition: all 0.15s;
+  letter-spacing: 0.01em;
 }
-.logout-link:hover { background: rgba(255,255,255,0.15); }
+.logout-link:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border-color: rgba(255,255,255,0.65);
+  transform: translateY(-1px);
+}
 
 .hero {
   background: linear-gradient(140deg, #1e40af 0%, #2563eb 55%, #3b82f6 100%);
